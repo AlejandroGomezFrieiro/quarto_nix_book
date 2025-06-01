@@ -3,7 +3,7 @@ project:
 
 book:
   title: "./quarto_project"
-  author: "Alejandro Gomez Frieiro"
+  author: "Your name"
   date: "6/1/2025"
   chapters:
     - index.qmd

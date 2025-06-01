@@ -25,6 +25,9 @@
         (system:
           let
             pkgs = nixpkgs.legacyPackages.${system};
+            tex = (pkgs.texlive.combine {
+        inherit (pkgs.texlive) scheme-small amsmath framed fvextra environ fontawesome5 orcidlink pdfcol tcolorbox tikzfill;
+      });
           in
           {
             default = devenv.lib.mkShell {
@@ -35,7 +38,7 @@
                   # version of latex + xelatex for compilation.
                   # For using numpy, libz is necessary. Could have been added
                   # In a normal nix fashion, but uv is more general to use.
-                  packages = [ pkgs.quarto pkgs.texliveMedium pkgs.libz pkgs.jupyter];
+                  packages = [ pkgs.quarto tex pkgs.libz pkgs.jupyter];
 
                   languages.python = {
                     enable = true;

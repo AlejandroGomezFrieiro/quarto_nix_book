@@ -1,0 +1,21 @@
+name: Build
+
+# Controls when the workflow will run
+on:
+  # Triggers the workflow on push or pull request events but only for the "main" branch
+  push:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@4
+      - uses: DeterminateSystems/nix-installer-action@main
+      - uses: DeterminateSystems/magix-nix-cache-action@main
+      - name: Build PDF
+        uses: quarto render --to pdf
+      - name: Build HTML
+        uses: quarto render
+
