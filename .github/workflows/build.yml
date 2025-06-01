@@ -14,10 +14,8 @@ jobs:
       - uses: actions/checkout@v4
       - uses: DeterminateSystems/nix-installer-action@main
       # - uses: DeterminateSystems/magix-nix-cache-action@main
-      - name: Enter devshell
-        run: nix develop --no-pure-eval
       - name: Build PDF
-        run: quarto render --to pdf
+        run: nix develop --no-pure-eval; quarto render --to pdf
       - name: Build HTML
-        run: quarto render
+        run: nix develop --no-pure-eval; quarto render
 
