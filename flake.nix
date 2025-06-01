@@ -31,7 +31,7 @@
               inherit inputs pkgs;
               modules = [
                 {
-                  packages = [ pkgs.quarto ];
+                  packages = [ pkgs.quarto pkgs.texliveMedium];
 
                   languages.python = {
                     enable = true;
