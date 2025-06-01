@@ -21,6 +21,8 @@ jobs:
         with:
           use_nix_profile: true
           nix_channel: nixpkgs
+      - name: Sync uv
+        run: uv sync
       - name: Build PDF
         run: quarto render --to pdf
       - name: Build HTML
