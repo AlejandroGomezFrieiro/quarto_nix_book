@@ -8,6 +8,8 @@ This is a simple [nix flake](https://nixos.wiki/wiki/flakes) to generate a [quar
 - Uses [devenv](https://devenv.sh/) to generate a development shell with quarto, a reasonable version of texlive, and some necessary dependencies.
 - Configures a python virtual environment, managed by [uv](https://docs.astral.sh/uv/) for ease of use.
     - Note: Since it's using `nix`, there might be incompatibilities with certain packages even when using `uv`. It is still the best option I know so far to use `python` in a simple manner.
+- Build PDF file and HTML on CI/CD pipeline.
+    - Automatic publishing is not automatically set.
 
 ## License
 
