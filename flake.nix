@@ -39,7 +39,7 @@
       });
 
       templates = {
-        default = {
+        quarto = {
           path = ./.;
           description = "A simple quarto + uv python template.";
 
