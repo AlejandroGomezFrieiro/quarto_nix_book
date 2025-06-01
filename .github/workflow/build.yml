@@ -15,7 +15,7 @@ jobs:
       - uses: DeterminateSystems/nix-installer-action@main
       - uses: DeterminateSystems/magix-nix-cache-action@main
       - name: Build PDF
-        uses: quarto render --to pdf
+        run: quarto render --to pdf
       - name: Build HTML
-        uses: quarto render
+        run: quarto render
 
