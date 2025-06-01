@@ -1,1 +1,4 @@
 .devenv
+.direnv/
+.devenv.flake.nix
+.quarto/
