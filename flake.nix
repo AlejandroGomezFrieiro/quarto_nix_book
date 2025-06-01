@@ -38,15 +38,13 @@
         devenv-test = self.devShells.${system}.default.config.test;
       });
 
-      templates = forEachSystem (system: {
+      templates = {
         default = {
           path = ./.;
           description = "A simple quarto + uv python template.";
 
         };
-
-      }
-      );
+      };
       devShells = forEachSystem
         (system:
           let
