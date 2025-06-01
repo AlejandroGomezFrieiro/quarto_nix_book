@@ -13,7 +13,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: DeterminateSystems/nix-installer-action@main
-      - uses: DeterminateSystems/magix-nix-cache-action@main
+      # - uses: DeterminateSystems/magix-nix-cache-action@main
       - name: Build PDF
         run: quarto render --to pdf
       - name: Build HTML
