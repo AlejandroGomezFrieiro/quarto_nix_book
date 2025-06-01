@@ -13,9 +13,14 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       # Use nix action and run .envrc
-      - uses: aldoborrero/use-nix-action@v4
-      # - uses: DeterminateSystems/nix-installer-action@main
+      # - uses: aldoborrero/use-nix-action@v4
+      - uses: DeterminateSystems/nix-installer-action@main
       # - uses: DeterminateSystems/magix-nix-cache-action@main
+      - name: Install direnv with Nix
+        uses: aldoborrero/direnv-nix-action@v2
+        with:
+          use_nix_profile: true
+          nix_channel: nixpkgs
       - name: Build PDF
         run: quarto render --to pdf
       - name: Build HTML
