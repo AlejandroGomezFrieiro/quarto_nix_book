@@ -12,10 +12,12 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
-      - uses: DeterminateSystems/nix-installer-action@main
+      # Use nix action and run .envrc
+      - uses: aldoborrero/use-nix-action@v4
+      # - uses: DeterminateSystems/nix-installer-action@main
       # - uses: DeterminateSystems/magix-nix-cache-action@main
       - name: Build PDF
-        run: nix develop --no-pure-eval; quarto render --to pdf
+        run: quarto render --to pdf
       - name: Build HTML
-        run: nix develop --no-pure-eval; quarto render
+        run: quarto render
 
