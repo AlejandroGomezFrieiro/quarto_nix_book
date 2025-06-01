@@ -31,7 +31,11 @@
               inherit inputs pkgs;
               modules = [
                 {
-                  packages = [ pkgs.quarto pkgs.texliveMedium];
+                  # We need texliveMedium so that we have a minimal
+                  # version of latex + xelatex for compilation.
+                  # For using numpy, libz is necessary. Could have been added
+                  # In a normal nix fashion, but uv is more general to use.
+                  packages = [ pkgs.quarto pkgs.texliveMedium pkgs.libz pkgs.jupyter];
 
                   languages.python = {
                     enable = true;
@@ -39,7 +43,10 @@
                     venv.enable = true;
 
                   };
-
+                  
+                  # Set so quarto recognizes we are using the nix-generated venv.
+                  # It might generate warnings, but it works as expected.
+                  env.QUARTO_PYTHON = "python3"; 
 
                 }
               ];

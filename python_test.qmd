@@ -1,0 +1,15 @@
+## Python code
+
+Plotting a $f(x) = \sin(10x)$ using python.
+
+```{python} 
+import numpy as np
+import matplotlib.pyplot as plt
+
+x = np.linspace(0.0, 1.0, 100)
+y = np.sin(10.0*x)
+
+plt.plot(x, y)
+plt.tight_layout()
+plt.show()
+```

@@ -8,10 +8,13 @@ book:
   chapters:
     - index.qmd
     - intro.qmd
+    - python_test.qmd
     - summary.qmd
     - references.qmd
 
 bibliography: references.bib
+
+jupyter: python3
 
 format:
   html:
