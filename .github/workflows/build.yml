@@ -27,4 +27,8 @@ jobs:
         run: quarto render --to pdf
       - name: Build HTML
         run: quarto render
-
+      - uses: actions/upload-artifact@v4
+        with:
+          name: Build
+          path: |
+                _book/*.pdf
